@@ -1,2 +1,1 @@
-# my-twitter
-Building backend full stack social app
+# WeJoy - my-twitter-project
