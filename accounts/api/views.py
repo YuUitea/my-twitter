@@ -47,7 +47,7 @@ class AccountViewSet(viewsets.ViewSet):
         return Response({
             'success': True,
             'user': UserSerializer(user).data,
-        })
+        }, status=201)
 
     @action(methods=['POST'], detail=False)
     def login(self, request):
@@ -61,6 +61,7 @@ class AccountViewSet(viewsets.ViewSet):
                 'message': 'Please check the input',
                 'errors': serializer.errors,
             }, status=400)
+
         # if validated, continue with login
         username = serializer.validated_data['username']
         password = serializer.validated_data['password']
